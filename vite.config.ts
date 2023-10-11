@@ -16,7 +16,7 @@ export default defineConfig({
     Components({
       resolvers: [VantResolver()],
     }),
-    AutoImport({imports:['vue']})
+    AutoImport({imports:['vue','vue-router'],dts:'./auto-imports.d.ts'})
   ],
   resolve:{
     alias:{
@@ -24,6 +24,13 @@ export default defineConfig({
       '@c':resolve('src/components'),
       '@pc':resolve('src/views/pc'),
       '@m':resolve('src/views/mobile')
+    }
+  },
+  css:{
+    preprocessorOptions:{
+      scss:{
+        additionalData:`@use "./src/assets/style/scss/bem.scss" as *;`
+      }
     }
   }
 })

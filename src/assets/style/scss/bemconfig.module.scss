@@ -1,0 +1,8 @@
+@use './bem.scss' as *;
+
+:export{
+    b: $block-sel;
+    e: $element-sel;
+    m: $modify-sel;
+    namespace:$namespace;
+   }
